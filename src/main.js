@@ -1,4 +1,4 @@
-import App from './components/app.svelte'
+import App from './app.svelte'
 
 export default new App({
 	target: document.body,
