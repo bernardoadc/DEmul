@@ -6,7 +6,7 @@
   <img src="/resources/icons/flip.png" alt="flip orientation">
   <!-- <span>{orientation}</span> -->
 </button>
-<div id="app" class="{device} {orientation}">
+<div id="app" class="{device} {orientation}" class:blurred={menuOpen}>
 </div>
 
 
@@ -21,7 +21,11 @@
     height: 100vh;
   }
 
-  #app {
+  #app.blurred {
+    overflow-y: hidden;
+  }
+
+  #main {
     overflow-y: hidden;
   }
 
@@ -30,7 +34,7 @@
     top: 23px;
     right: 23px;
     border-radius: 10px;
-    padding: 10px;
+    padding: 10px 10px 5px 10px;
     /* background-color: #f1f1f1; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
@@ -62,7 +66,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.8);
   border: 16px black solid;
   border-radius: 36px;
 }
@@ -97,31 +101,49 @@
 }
 
 /* The horizontal line on the top of the device */
-.mobile:before {
+#app:not(.tablet):before {
   content: '';
   display: block;
-  width: 60px;
-  height: 5px;
   position: absolute;
-  top: -30px;
-  left: 50%;
   transform: translate(-50%, -50%);
-  background: #333;
+  background: #555;
   border-radius: 10px;
 }
 
+#app.portrait:before {
+  width: 60px;
+  height: 5px;
+  top: -30px;
+  left: 50%;
+}
+
+#app.landscape:before {
+  width: 5px;
+  height: 60px;
+  left: -30px;
+  top: 50%;
+}
+
 /* The circle on the bottom of the device */
-.mobile:after {
+#app:after {
   content: '';
   display: block;
   width: 35px;
   height: 35px;
   position: absolute;
-  left: 50%;
-  bottom: -65px;
   transform: translate(-50%, -50%);
   background: #333;
   border-radius: 50%;
+}
+
+#app.portrait:after {
+  left: 50%;
+  bottom: -65px;
+}
+
+#app.landscape:after {
+  right: -65px;
+  top: 50%;
 }
 
 /* The device with borders */
@@ -129,7 +151,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.8);
   border: 16px black solid;
   border-radius: 36px;
 }
@@ -163,34 +185,6 @@
   height: 768px;
   background: white;
   margin: -1px;
-}
-
-/* The horizontal line on the top of the device */
-.tablet:before {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 5px;
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #333;
-  border-radius: 10px;
-}
-
-/* The circle on the bottom of the device */
-.tablet:after {
-  content: '';
-  display: block;
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  left: 50%;
-  bottom: -65px;
-  transform: translate(-50%, -50%);
-  background: #333;
-  border-radius: 50%;
 }
 </style>
 
