@@ -6,9 +6,29 @@
   <img src="/resources/icons/flip.png" alt="flip orientation">
   <!-- <span>{orientation}</span> -->
 </button>
-<div id="app" class="{device} {orientation}" class:blurred={menuOpen}>
+<div id="demul" class="{device} {orientation}" class:blurred={menuOpen}>
+  <iframe title="app"></iframe>  
 </div>
 
+<script>
+  //props
+  let device = 'mobile'
+  let orientation = 'portrait'
+
+  function toggleDevice () {
+    if (device == 'mobile')
+      device = 'tablet'
+    else
+      device = 'mobile'
+  }
+
+  function toggleOrientation () {
+    if (orientation == 'portrait')
+      orientation = 'landscape'
+    else
+      orientation = 'portrait'
+  }
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700');
@@ -19,14 +39,6 @@
     background-color: #c0c0c0;
     width: 100vw;
     height: 100vh;
-  }
-
-  #app.blurred {
-    overflow-y: hidden;
-  }
-
-  #main {
-    overflow-y: hidden;
   }
 
   #device, #orientation {

@@ -1,7 +1,7 @@
 {
-  "name": "mozca",
+  "name": "demul",
   "version": "1.0.0",
-  "description": "Mozca app",
+  "description": "Device Emulator",
   "main": "index.js",
   "scripts": {
     "build": "rollup -c",
