@@ -6,11 +6,13 @@
   <img src="/resources/icons/flip.png" alt="flip orientation">
   <!-- <span>{orientation}</span> -->
 </button>
-<div id="demul" class="{device} {orientation}" class:blurred={menuOpen}>
-  <iframe title="app"></iframe>  
+<div id="demul" class="{device} {orientation}">
+  <iframe title="app" src={src}></iframe>  
 </div>
 
 <script>
+  export let src
+
   //props
   let device = 'mobile'
   let orientation = 'portrait'
@@ -199,23 +201,3 @@
   margin: -1px;
 }
 </style>
-
-<script>
-  //props
-  let device = 'mobile'
-  let orientation = 'portrait'
-
-  function toggleDevice () {
-    if (device == 'mobile')
-      device = 'tablet'
-    else
-      device = 'mobile'
-  }
-
-  function toggleOrientation () {
-    if (orientation == 'portrait')
-      orientation = 'landscape'
-    else
-      orientation = 'portrait'
-  }
-</script>
