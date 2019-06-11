@@ -7,7 +7,7 @@
     "build": "rollup -c",
     "autobuild": "rollup -c -w",
     "dev": "run-p start:dev autobuild",
-    "start": "sirv public --port 8888",
+    "start": "sirv public --port PORT",
     "start:dev": "sirv public --dev --port 8888"
   },
   "repository": {
