@@ -74,6 +74,10 @@
     color: grey;
   }
 
+  iframe {
+    border: none
+  }
+
 /*** W3Schools https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_device_smartphone ***/
 /* The device with borders */
 .mobile {
