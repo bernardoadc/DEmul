@@ -1,0 +1,3 @@
+- corrige tamanho botao device
+- coloca a url q vai carregar dentro de um env
+- tamanho tablet de pe, pra exibir na tela
